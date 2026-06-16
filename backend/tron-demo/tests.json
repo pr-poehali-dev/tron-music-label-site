@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Submit demo request",
+      "method": "POST",
+      "path": "/",
+      "body": {"first_name": "Анна", "last_name": "Смирнова", "middle_name": "Петровна", "artist_name": "AURORA", "email": "aurora@example.com", "genre": "Future Bass", "links": "https://soundcloud.com/aurora", "message": "Хочу сотрудничать с лейблом TRON"},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Missing required fields",
+      "method": "POST",
+      "path": "/",
+      "body": {"email": "noname@example.com"},
+      "expectedStatus": 400,
+      "expectedBody": {"error": "Заполните обязательные поля"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

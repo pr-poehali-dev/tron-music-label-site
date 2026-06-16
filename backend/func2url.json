@@ -1,3 +1,7 @@
 {
+  "tron-demo": "https://functions.poehali.dev/2b6be537-aba7-4a0e-ae11-d79a4c5b7cda",
+  "tron-auth": "https://functions.poehali.dev/4832e020-8683-46ae-bbc1-aaeb30bbb0a1",
+  "tron-subscribe": "https://functions.poehali.dev/c010db1c-a5b2-4334-b6e6-56ad2e955fc7",
+  "tron-artists": "https://functions.poehali.dev/b5975251-49e7-47ac-a362-75a729e791d5",
   "lead": "https://functions.poehali.dev/a98ff563-eb70-4248-a9e1-ae0b124a32ca"
 }

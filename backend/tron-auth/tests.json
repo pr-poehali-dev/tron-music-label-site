@@ -1,0 +1,37 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Register new artist",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "register", "email": "test_tron@example.com", "password": "test123", "first_name": "Иван", "last_name": "Иванов", "middle_name": "Иванович", "artist_name": "NOVA TEST", "genre": "Techno"},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login with correct credentials",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "login", "email": "test_tron@example.com", "password": "test123"},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login with wrong password",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "login", "email": "test_tron@example.com", "password": "wrongpass"},
+      "expectedStatus": 401,
+      "expectedBody": {"error": "Неверный email или пароль"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
