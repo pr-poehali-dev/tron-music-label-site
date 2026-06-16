@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS CORS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Subscribe lead",
+      "method": "POST",
+      "path": "/",
+      "body": {"type": "subscribe", "email": "fan@example.com"},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Demo submission",
+      "method": "POST",
+      "path": "/",
+      "body": {"type": "demo", "name": "NOVA", "email": "nova@example.com", "genre": "Techno", "links": "https://soundcloud.com/nova"},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
